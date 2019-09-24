@@ -10,15 +10,22 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
+    WebView myWebView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        WebView myWebView = (WebView) findViewById(R.id.webview);
+        myWebView = (WebView) findViewById(R.id.webview);
+
+        myWebView.getSettings().setJavaScriptEnabled(true);
+
         myWebView.loadUrl("https://blog.codecamp.jp");
 
         myWebView.setWebViewClient(new MyWebViewClient());
+
+
     }
 
     //アプリ内でブラウザオープン　特定ドメイン以外はブラウザ起動
