@@ -41,4 +41,13 @@ public class MainActivity extends AppCompatActivity {
             //return true;
         //}
     }
+
+    //戻るボタン
+    @Override
+    public void onBackPressed() {
+        if(myWebView!= null && myWebView.canGoBack())
+            myWebView.goBack();// if there is previous page open it
+        else
+            super.onBackPressed();//if there is no previous page, close app
+    }
 }
